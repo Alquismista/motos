@@ -1,14 +1,11 @@
-export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
-  <meta charset="utf-8">
-  <title>Proyecto de Motos</title>
-  <base href="/motos/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>*{box-sizing:border-box;margin:0;padding:0}img{width:100%}body{font-family:Arial,sans-serif}
-</style><link rel="stylesheet" href="styles-SJASMUUX.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-SJASMUUX.css"></noscript><style ng-app-id="ng">header[_ngcontent-ng-c2446980934]{background-color:#000;padding:20px}nav[_ngcontent-ng-c2446980934]   a[_ngcontent-ng-c2446980934]{color:#fff;margin:0 10px;text-decoration:none;padding:10px 20px}nav[_ngcontent-ng-c2446980934]   a[_ngcontent-ng-c2446980934]:hover{background-color:#fff;color:#000;border-radius:20px}</style><style ng-app-id="ng">h4[_ngcontent-ng-c2022390366]{padding:20px;color:#fff;background-color:#000;text-align:center}</style></head>
-<body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
-</script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
-  <app-root ng-version="21.0.2" ngh="1" ng-server-context="ssg"><app-header _nghost-ng-c2446980934 ngh="0"><header _ngcontent-ng-c2446980934><nav _ngcontent-ng-c2446980934><a _ngcontent-ng-c2446980934 routerlink="/" href="/motos/" jsaction="click:;">Inicio</a><a _ngcontent-ng-c2446980934 routerlink="/nosotros" href="/motos/nosotros" jsaction="click:;">Nosotros</a><a _ngcontent-ng-c2446980934 routerlink="/productos" href="/motos/productos" jsaction="click:;">productos</a><a _ngcontent-ng-c2446980934 routerlink="/contacto" href="/motos/contacto" jsaction="click:;">Contacto</a></nav></header></app-header><main><router-outlet></router-outlet><app-about ngh="0"><h1>sobre nosotros</h1><img src="/img/img2.jpg" alt="Moto"></app-about><!----></main><app-footer _nghost-ng-c2022390366 ngh="0"><h4 _ngcontent-ng-c2022390366>todos los derechos no reservados</h4></app-footer></app-root>
-<script src="main-ZMASG5IN.js" type="module"></script>
-
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"2":[{"i":"c3496841342","r":1}]}}]}</script></body></html>`;
+export default `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting</title>
+    <meta http-equiv="refresh" content="0; url=/#/">
+  </head>
+  <body>
+    <pre>Redirecting to <a href="/#/">/#/</a></pre>
+  </body>
+</html>`;
