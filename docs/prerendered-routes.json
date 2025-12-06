@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/motos": {},
+    "/motos/contacto": {},
+    "/motos/nosotros": {},
+    "/motos/productos": {}
+  }
+}
