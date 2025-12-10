@@ -3,11 +3,20 @@ header {
     padding: 20px;
 }
 
+nav {
+    display: flex;              /* Elementos en línea (horizontal) */
+    justify-content: center;    /* Centrado horizontal */
+    align-items: center;        /* Alineación vertical */
+    gap: 20px;                  /* Separación entre enlaces */
+}
+
 nav a {
-    color: black;
-    margin: 0 10px;
+    color: white;               /* Letras blancas */
     text-decoration: none;
     padding: 10px 20px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease;
 }
 
 nav a:hover {

@@ -1,0 +1,66 @@
+
+.contacto {
+    background-color: #f4f4f4;  /* Igual que hero-content, limpio y claro */
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.contacto h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.form-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.form-contacto label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.form-contacto .btn-primary {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.form-contacto .btn-primary:hover {
+    background-color: #444;
+    color: #fff;
+}
