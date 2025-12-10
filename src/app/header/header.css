@@ -1,15 +1,17 @@
-header{
+header {
     background-color: black;
-    padding: 20px;  
+    padding: 20px;
 }
-nav a{
-    color: white;
+
+nav a {
+    color: black;
     margin: 0 10px;
     text-decoration: none;
     padding: 10px 20px;
-}   
-nav a:hover{
-    background-color: white;
-    color: black;
+}
+
+nav a:hover {
+    background-color: gray;
+    color: rgb(236, 18, 18);
     border-radius: 20px;
 }

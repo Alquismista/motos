@@ -9,7 +9,7 @@ export const routes: Routes = [
   { path: '', component: Home },
   { path: 'nosotros', component: About },
   { path: 'productos', component: Productos },
-  { path: 'contacto', component: Contact },
+  { path: 'contactos', component: Contact },
   { path: '**', redirectTo: '' }
 ];
 
