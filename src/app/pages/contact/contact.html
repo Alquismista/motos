@@ -1,35 +1,117 @@
-<h1>No me busquen yo los busco</h1>
-<img src="img/img3.jpg" alt="Moto">
-<h2>Potencia y Estabilidad en Cada Trayecto</h2>
-<h1>Contacto</h1>
+<div class="contacto-container">
+  <div class="contacto-content">
+    <div class="contacto-grid">
+      <div class="form-section">
+        <div class="form-header">
+          <h3><span class="form-icon">✉️</span> Contáctanos</h3>
+          <p>Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+        </div>
 
-<!-- Imagen ya la tienes arriba -->
+        <form [formGroup]="contactForm" (ngSubmit)="enviar()" class="form-contacto">
+          <!-- NOMBRE -->
+          <div class="form-group">
+            <label for="nombre">
+              <span class="label-icon">👤</span> Nombre
+            </label>
+            <input
+              type="text"
+              id="nombre"
+              formControlName="nombre"
+              placeholder="Escribe tu nombre"
+              [class.invalid]="f['nombre'].touched && f['nombre'].invalid"
+            />
+            <div class="error" *ngIf="f['nombre'].touched && f['nombre'].invalid">
+              <small *ngIf="f['nombre'].errors?.['required']">El nombre es obligatorio</small>
+              <small *ngIf="f['nombre'].errors?.['minlength']">Mínimo 2 caracteres</small>
+            </div>
+          </div>
 
-<form class="form-contacto">
-    <label for="nombre">Nombre Completo:</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+          <div class="form-row">
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="email">
+                <span class="label-icon">📧</span> Correo Electrónico
+              </label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="correo@ejemplo.com"
+                [class.invalid]="f['email'].touched && f['email'].invalid"
+              />
+              <div class="error" *ngIf="f['email'].touched && f['email'].invalid">
+                <small *ngIf="f['email'].errors?.['required']">El correo es obligatorio</small>
+                <small *ngIf="f['email'].errors?.['email']">Formato de correo inválido</small>
+              </div>
+            </div>
 
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+            <!-- TELÉFONO -->
+            <div class="form-group">
+              <label for="telefono">
+                <span class="label-icon">📱</span> Teléfono
+              </label>
+              <input
+                type="tel"
+                id="telefono"
+                formControlName="telefono"
+                placeholder="+521 000 000 0000"
+                [class.invalid]="f['telefono'].touched && f['telefono'].invalid"
+              />
+              <div class="error" *ngIf="f['telefono'].touched && f['telefono'].invalid">
+                <small *ngIf="f['telefono'].errors?.['required']">El teléfono es obligatorio</small>
+                <small *ngIf="f['telefono'].errors?.['minlength']">Mínimo 7 dígitos</small>
+              </div>
+            </div>
+          </div>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" name="telefono" placeholder="Ej: +521 000 000 0000">
+          <!-- ASUNTO -->
+          <div class="form-group">
+            <label for="asunto">
+              <span class="label-icon">🎯</span> Asunto
+            </label>
+            <input
+              type="text"
+              id="asunto"
+              formControlName="asunto"
+              placeholder="Motivo de tu mensaje"
+              [class.invalid]="f['asunto'].touched && f['asunto'].invalid"
+            />
+            <div class="error" *ngIf="f['asunto'].touched && f['asunto'].invalid">
+              <small *ngIf="f['asunto'].errors?.['required']">El asunto es obligatorio</small>
+            </div>
+          </div>
 
-    <label for="asunto">Asunto:</label>
-    <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu mensaje" required>
+          <!-- MENSAJE -->
+          <div class="form-group">
+            <label for="mensaje">
+              <span class="label-icon">💬</span> Mensaje
+            </label>
+            <textarea
+              id="mensaje"
+              formControlName="mensaje"
+              rows="5"
+              placeholder="Escribe tu mensaje aquí..."
+              [class.invalid]="f['mensaje'].touched && f['mensaje'].invalid"
+            ></textarea>
+            <div class="error" *ngIf="f['mensaje'].touched && f['mensaje'].invalid">
+              <small *ngIf="f['mensaje'].errors?.['required']">El mensaje es obligatorio</small>
+              <small *ngIf="f['mensaje'].errors?.['minlength']">Mínimo 10 caracteres</small>
+            </div>
+          </div>
 
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-
-    <button type="submit">Enviar Mensaje</button>
-</form>
-<p>
-    Un modelo pensado para combinar potencia con estabilidad. Su postura de manejo 
-    permite un control total, incluso a altas velocidades. Perfecta para rutas rápidas 
-    y conducción deportiva.
-</p>
-<p>
-    Diseñada para quienes buscan desempeño y estilo, esta moto combina potencia con una 
-    postura de manejo firme que ofrece control total en cada movimiento. Ideal para 
-    quienes disfrutan de velocidades intensas sin sacrificar estabilidad.
-</p>
+          <div class="form-actions">
+            <button 
+              type="submit" 
+              class="btn-submit" 
+              [disabled]="contactForm.invalid || submitting"
+            >
+              <span class="btn-icon">🚀</span> 
+              <span *ngIf="!submitting">Enviar Mensaje</span>
+              <span *ngIf="submitting">Enviando...</span>
+          </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

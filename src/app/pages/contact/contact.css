@@ -1,66 +1,193 @@
+/* contacto.component.css */
 
-.contacto {
-    background-color: #f4f4f4;  /* Igual que hero-content, limpio y claro */
-    padding: 50px 20px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+.contacto-container {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    min-height: calc(100vh - 80px);
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-.contacto h1 {
-    font-size: 3rem;
-    color: #222;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.contacto-content {
+    width: 100%;
+    max-width: 1200px;
 }
 
+.contacto-grid {
+    display: flex;
+    justify-content: center;
+}
 
-.form-contacto {
+/* Formulario */
+.form-section {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-header p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Campos */
+.form-contacto {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    text-align: left;
+    gap: 20px;
 }
 
-.form-contacto label {
-    font-weight: bold;
-    color: #333;
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .form-contacto input,
 .form-contacto textarea {
     padding: 12px;
-    border: 1px solid #aaa;
+    border: 2px solid #ddd;
     border-radius: 8px;
-    font-size: 16px;
-    width: 100%;
-    transition: 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
 }
 
+/* Estilos para campos inválidos */
+.form-contacto input.invalid,
+.form-contacto textarea.invalid {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
 
 .form-contacto input:focus,
 .form-contacto textarea:focus {
-    border-color: #007bff;
     outline: none;
+    border-color: #007bff;
 }
 
+.form-contacto input.invalid:focus,
+.form-contacto textarea.invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
 
-.form-contacto .btn-primary {
-    padding: 15px;
-    background-color: black;
+.form-contacto input::placeholder,
+.form-contacto textarea::placeholder {
+    color: #999;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Mensajes de error */
+.error {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+.error small {
+    display: block;
+}
+
+/* Botón */
+.btn-submit {
+    background: #007bff;
     color: white;
     border: none;
+    padding: 15px;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.form-contacto .btn-primary:hover {
-    background-color: #444;
-    color: #fff;
+.btn-submit:hover:not(:disabled) {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.form-note a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-note a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacto-container {
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 25px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,26 +1,216 @@
+/* HEADER RESPONSIVE CON HAMBURGUESA */
+
+/* Fondo oscuro elegante */
 header {
-    background-color: black;
-    padding: 20px;
+    background: #0c0c0c;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid #333;
 }
 
-nav {
-    display: flex;              /* Elementos en línea (horizontal) */
-    justify-content: center;    /* Centrado horizontal */
-    align-items: center;        /* Alineación vertical */
-    gap: 20px;                  /* Separación entre enlaces */
+/* Navbar */
+.navbar {
+    background-color: transparent !important;
+    padding: 0;
+    min-height: 70px;
 }
 
-nav a {
-    color: white;               /* Letras blancas */
+/* Contenedor */
+.container-fluid {
+    padding: 0 40px;
+}
+
+/* Botón hamburguesa - SOLO EN MÓVILES */
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    margin-right: 15px;
+    display: none; /* Oculto en desktop */
+}
+
+/* Icono hamburguesa personalizado */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 25px;
+    height: 25px;
+}
+
+/* Menú colapsable */
+.navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+}
+
+/* Lista horizontal DESKTOP */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Items del menú */
+.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+/* ENLACES - Estilo moderno */
+.nav-link {
+    color: #bbb !important;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 25px 30px !important;
+    transition: all 0.3s ease;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    transition: 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    border: none;
+    background: transparent;
+    display: block;
 }
 
-nav a:hover {
-    background-color: gray;
-    color: rgb(236, 18, 18);
-    border-radius: 20px;
+/* Efecto hover */
+.nav-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Línea inferior animada */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    height: 2px;
+    background: #ff0000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Enlace activo */
+.nav-link.active {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+    background: #ff3333;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+/* Separador entre items */
+.nav-item:not(:last-child) .nav-link {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* TABLETS (hasta 992px) */
+@media (max-width: 992px) {
+    .container-fluid {
+        padding: 0 20px;
+    }
+    
+    .nav-link {
+        padding: 20px 15px !important;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    
+    .nav-link::after {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* MÓVILES (hasta 768px) - ACTIVAR HAMBURGUESA */
+@media (max-width: 768px) {
+    /* Mostrar botón hamburguesa */
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1001;
+    }
+    
+    /* Ocultar menú horizontal, mostrar vertical al hacer clic */
+    .navbar-collapse {
+        display: none !important;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #0c0c0c;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        border-top: 1px solid #333;
+        z-index: 1000;
+    }
+    
+    /* Cuando está expandido por Bootstrap */
+    .navbar-collapse.show {
+        display: block !important;
+    }
+    
+    /* Menú vertical en móviles */
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        padding: 15px 20px !important;
+        font-size: 16px;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Quitar línea inferior en hover para móviles */
+    .nav-link::after {
+        display: none;
+    }
+    
+    /* Efecto hover para móviles */
+    .nav-link:hover, .nav-link.active {
+        background: rgba(255, 51, 51, 0.2);
+        color: #fff !important;
+    }
+}
+
+/* MÓVILES PEQUEÑOS (hasta 480px) */
+@media (max-width: 480px) {
+    .container-fluid {
+        padding: 0 10px;
+    }
+    
+    .navbar-toggler {
+        right: 10px;
+        top: 15px;
+    }
+    
+    .nav-link {
+        padding: 12px 15px !important;
+        font-size: 14px;
+    }
 }
