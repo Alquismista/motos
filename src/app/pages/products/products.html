@@ -1,0 +1,61 @@
+<h1 class="text-center my-5">🏍️ Catálogo de Motos</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let producto of productos">
+      <div class="card h-100 shadow-lg border-0 hover-card">
+        <!-- Badge de oferta -->
+        <div class="position-absolute top-0 end-0 m-2">
+          <span *ngIf="producto.descuento" class="badge bg-danger">-{{producto.descuento}}%</span>
+          <span *ngIf="producto.nuevo" class="badge bg-success">NUEVO</span>
+        </div>
+        
+        <!-- Imagen del producto -->
+        <div class="card-img-container">
+          <img [src]="producto.imagen" class="card-img-top moto-image" [alt]="producto.nombre">
+          <div class="img-overlay">
+            <button class="btn btn-outline-light btn-sm" (click)="verDetalles(producto)">
+            
+            </button>
+          </div>
+        </div>
+        
+        <!-- Cuerpo de la tarjeta -->
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-dark">{{ producto.nombre }}</h5>
+          <p class="card-text text-muted flex-grow-1">{{ producto.descripcion }}</p>
+          
+          <!-- Especificaciones -->
+          <div class="specs mb-3">
+            <div class="spec-item">
+              <i class="bi bi-gear"></i>
+              <small>{{ producto.motor || '1000cc' }}</small>
+            </div>
+            <div class="spec-item">
+              <i class="bi bi-lightning-charge"></i>
+              <small>{{ producto.potencia || '180 HP' }}</small>
+            </div>
+            <div class="spec-item">
+              <i class="bi bi-speedometer2"></i>
+              <small>{{ producto.velocidad || '280 km/h' }}</small>
+            </div>
+          </div>
+          
+          <!-- Precio -->
+          <div class="price-section mt-auto">
+            <div *ngIf="producto.precioOriginal" class="text-decoration-line-through text-muted">
+              {{ producto.precioOriginal | currency:'USD':'symbol':'1.0' }}
+            </div>
+            <h4 class="text-primary fw-bold mb-2">
+              {{ producto.precio | currency:'USD':'symbol':'1.0' }}
+            </h4>
+            <small class="text-success" *ngIf="producto.financiacion">
+              <i class="bi bi-credit-card"></i> Desde {{ producto.financiacion | currency:'USD':'symbol':'1.0' }}/mes
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
